@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
@@ -40,9 +41,11 @@ public class CarouselActivity extends BaseActivity {
                 case 0:
                     //Bitmap bm = (Bitmap) msg.obj;
                     //iv_pic.setImageBitmap(bm);
-                    Glide.with(CarouselActivity.this).load(msg.obj).error(R.drawable.fengjing).animate(android.R.anim.slide_in_left).dontAnimate().into(iv_pic);
-                    i++;
-                    action1();
+                    if(!CarouselActivity.this.isFinishing()){
+                        Glide.with(CarouselActivity.this).load(msg.obj).error(R.drawable.fengjing).animate(android.R.anim.slide_in_left).dontAnimate().into(iv_pic);
+                        i++;
+                        action1();
+                    }
                     break;
             }
         };
@@ -140,5 +143,13 @@ public class CarouselActivity extends BaseActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(event.getAction()==KeyEvent.KEYCODE_BACK){
+            handler.removeMessages(0);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
