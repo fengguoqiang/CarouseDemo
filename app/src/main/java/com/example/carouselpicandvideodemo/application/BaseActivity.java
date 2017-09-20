@@ -42,6 +42,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         if(mContext==null){
             mContext = this;
         }
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
         //将Activity添加到activityList中
         CarouselApplication.getInstance().mActivityStack.addActivity(this);
         //BASE_URL= CarouselApplication.getInstance().getBaseUrl();

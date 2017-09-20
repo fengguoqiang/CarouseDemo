@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
@@ -53,6 +54,8 @@ public class CarouselActivity extends BaseActivity {
 
     @Override
     protected void initContentView() {
+        //全屏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.tui_guanggao_act);
     }
 
