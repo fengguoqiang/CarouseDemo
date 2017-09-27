@@ -87,7 +87,11 @@ public class CarouselActivity extends BaseActivity {
             Toast.makeText(this, "您没有内容浏览", Toast.LENGTH_SHORT).show();
         } else {
             files = file.listFiles();
-            action1();
+            if(files.length>0){
+                action1();
+            }else{
+                Toast.makeText(this, "您没有内容浏览", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
