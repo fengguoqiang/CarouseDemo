@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/iv_xuanchuan_image"
-        android:layout_width="1920dp"
-        android:layout_height="1080dp" />
+        android:layout_width="1080dp"
+        android:layout_height="1920dp" />
 
 </LinearLayout>

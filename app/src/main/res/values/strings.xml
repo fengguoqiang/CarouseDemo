@@ -3,6 +3,9 @@
 
     <!--框架所需的字符串资源-->
     <string name="contentDescription">图片描述</string>
+    <string name="introduction_doc">文档介绍</string>
+    <string name="introduction_video">视频介绍</string>
+    <string name="download">下载</string>
 
 
 </resources>
